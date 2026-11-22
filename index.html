@@ -4,214 +4,253 @@
 <meta charset="utf-8">
 <title>Jeong-Ki Yoo, Ph.D. — Robotics Executive &amp; Researcher</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Robotics executive and KAIST Ph.D.: SLAM, navigation, edge AI and Physical AI. Products, results, open-source projects and portfolio decks.">
+<meta name="description" content="Robotics executive and KAIST Ph.D.: SLAM, navigation, edge AI and Physical AI. Products, results, open-source projects and experience.">
+<meta property="og:title" content="Jeong-Ki Yoo, Ph.D. — Robotics Executive & Researcher">
+<meta property="og:description" content="SLAM · Navigation · Edge AI · Physical AI">
+<meta property="og:image" content="https://ohora23.github.io/avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #ffffff;
-    --bg-alt: #f6f7f9;
-    --text: #1a1d21;
-    --text-dim: #565c66;
-    --border: #e3e6ea;
-    --accent: #2563eb;
-    --accent-bg: #eef3ff;
-    --good: #0f9960;
-    --bad: #d1453d;
-    --code-bg: #f1f3f5;
+    --bg: #ffffff; --bg-alt: #f5f7fb; --card: #ffffff; --text: #141922; --dim: #5a6372;
+    --border: #e4e8ef; --accent: #2563eb; --accent2: #7c3aed; --accent-bg: #eef3ff;
+    --hero1: #f6f8fc; --hero2: #e6edfb; --shadow: 0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
   }
   @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #14161a;
-      --bg-alt: #1b1e24;
-      --text: #e7e9ec;
-      --text-dim: #9aa1ab;
-      --border: #2a2e35;
-      --accent: #5b9dff;
-      --accent-bg: #1b2a45;
-      --good: #33c481;
-      --bad: #ff6f68;
-      --code-bg: #1f232a;
+    :root:not([data-theme="light"]) {
+      --bg: #0d1117; --bg-alt: #111722; --card: #141b26; --text: #e8ebf0; --dim: #9aa4b2;
+      --border: #242d3b; --accent: #6aa6ff; --accent2: #a78bfa; --accent-bg: #172440;
+      --hero1: #0e141d; --hero2: #172238; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #14161a; --bg-alt: #1b1e24; --text: #e7e9ec; --text-dim: #9aa1ab;
-    --border: #2a2e35; --accent: #5b9dff; --accent-bg: #1b2a45; --good: #33c481;
-    --bad: #ff6f68; --code-bg: #1f232a;
-  }
-  :root[data-theme="light"] {
-    --bg: #ffffff; --bg-alt: #f6f7f9; --text: #1a1d21; --text-dim: #565c66;
-    --border: #e3e6ea; --accent: #2563eb; --accent-bg: #eef3ff; --good: #0f9960;
-    --bad: #d1453d; --code-bg: #f1f3f5;
+    --bg: #0d1117; --bg-alt: #111722; --card: #141b26; --text: #e8ebf0; --dim: #9aa4b2;
+    --border: #242d3b; --accent: #6aa6ff; --accent2: #a78bfa; --accent-bg: #172440;
+    --hero1: #0e141d; --hero2: #172238; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
   }
   * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-  }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-  header.hero {
-    background: var(--bg-alt);
-    border-bottom: 1px solid var(--border);
-    padding: 64px 0 40px;
-    text-align: center;
-  }
-  h1 { font-size: 1.9rem; margin: 0 0 10px; letter-spacing: -0.01em; }
-  .subtitle { color: var(--text-dim); font-size: 1.05rem; margin: 0 0 22px; }
-  .badge {
-    display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.03em;
-    text-transform: uppercase; color: var(--accent); background: var(--accent-bg);
-    border-radius: 100px; padding: 4px 12px; margin-bottom: 18px;
-  }
-  .links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .links a {
-    color: var(--text); text-decoration: none; border: 1px solid var(--border);
-    padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; background: var(--bg);
-  }
-  .links a:hover { border-color: var(--accent); color: var(--accent); }
-  main { padding: 48px 0 20px; }
-  section { margin-bottom: 56px; }
-  h2 {
-    font-size: 1.3rem; margin: 0 0 6px; padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-  }
-  h2 .num { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 8px; }
-  p { color: var(--text); }
-  .dim { color: var(--text-dim); }
-  figure { margin: 20px 0; text-align: center; }
-  figure img { max-width: 100%; border-radius: 8px; border: 1px solid var(--border); }
-  figcaption { color: var(--text-dim); font-size: 0.85rem; margin-top: 10px; }
-  .two-col {
-    display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center;
-  }
-  @media (min-width: 640px) { .two-col { grid-template-columns: 1fr 1fr; } }
-  .card {
-    background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px;
-    padding: 18px 20px;
-  }
-  .card h3 { margin: 0 0 8px; font-size: 1rem; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 18px 0; }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
-  th { color: var(--text-dim); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.02em; }
-  td.num { font-variant-numeric: tabular-nums; }
-  .up { color: var(--good); font-weight: 600; }
-  .down { color: var(--bad); font-weight: 600; }
-  code, pre {
-    background: var(--code-bg); border-radius: 6px; font-size: 0.85em;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  }
-  code { padding: 1px 6px; }
-  pre { padding: 14px 16px; overflow-x: auto; }
-  ul { padding-left: 20px; }
-  li { margin-bottom: 6px; }
-  footer {
-    border-top: 1px solid var(--border); padding: 28px 0 48px;
-    color: var(--text-dim); font-size: 0.85rem; text-align: center;
-  }
-  footer a { color: var(--accent); }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 
-  .wrap { max-width: 980px; }
-  header.hero { text-align:left; padding: 72px 0 44px; }
-  header.hero .links { justify-content:flex-start; }
-  h1 { font-size: 2.3rem; }
-  .role { font-size:1.1rem; font-weight:600; margin:0 0 6px; }
-  .grid { display:grid; grid-template-columns:1fr; gap:14px; }
-  @media (min-width: 680px) { .grid.g2 { grid-template-columns:1fr 1fr; } .grid.g3 { grid-template-columns:1fr 1fr 1fr; } .grid.g4 { grid-template-columns:repeat(4,1fr);} }
-  .stat { font-size:1.6rem; font-weight:700; color:var(--accent); line-height:1.2; }
-  .card p { margin:6px 0 0; }
-  .card .tag { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.04em; }
-  .card a.more { font-size:.85rem; margin-right:12px; color:var(--accent); text-decoration:none; }
-  .card a.more:hover { text-decoration:underline; }
-  .tl { list-style:none; padding:0; margin:0; }
-  .tl li { display:grid; grid-template-columns: 130px 1fr; gap:14px; padding:12px 0; border-bottom:1px solid var(--border); margin:0; }
-  .tl .when { color:var(--text-dim); font-variant-numeric: tabular-nums; font-size:.9rem; }
-  .tl b { display:block; }
-  .deck { display:block; text-decoration:none; color:inherit; }
-  .deck:hover { border-color: var(--accent); }
-  a { color: var(--accent); }
-  .hero-row { display:flex; gap:36px; align-items:center; }
-  .hero-row .txt { flex:1; min-width:0; }
-  .avatar { width:168px; height:168px; border-radius:50%; object-fit:cover; flex:none; border:4px solid var(--bg); box-shadow:0 2px 14px rgba(0,0,0,.12); }
-  @media (max-width: 680px) { .hero-row { flex-direction:column-reverse; align-items:flex-start; gap:20px; } .avatar { width:120px; height:120px; } }
+  nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  nav .brand { font-family: "Playfair Display", Georgia, serif; font-weight: 700; color: var(--text); font-size: 1.05rem; }
+  nav .menu { display: flex; gap: 22px; align-items: center; font-size: .9rem; }
+  nav .menu a { color: var(--dim); }
+  nav .menu a:hover { color: var(--text); text-decoration: none; }
+  #theme { display: inline-flex; align-items: center; background: none; border: 1px solid var(--border); color: var(--dim); border-radius: 8px; padding: 4px 9px; cursor: pointer; font-size: .85rem; }
+  @media (max-width: 720px) { nav .menu a.opt { display: none; } }
+
+  header.hero { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--hero1), var(--hero2)); border-bottom: 1px solid var(--border); }
+  header.hero svg.bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .9; pointer-events: none; }
+  .hero-row { position: relative; display: flex; gap: 48px; align-items: center; padding: 88px 0 72px; }
+  .hero-row .txt { flex: 1; min-width: 0; }
+  .eyebrow { display: inline-block; font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); background: var(--accent-bg); border-radius: 100px; padding: 5px 13px; margin-bottom: 18px; }
+  h1 { font-family: "Playfair Display", Georgia, serif; font-size: clamp(2.3rem, 5vw, 3.4rem); line-height: 1.1; margin: 0 0 14px; letter-spacing: -.01em; }
+  .role { font-size: 1.15rem; font-weight: 600; margin: 0 0 14px; }
+  .role span { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { color: var(--dim); font-size: 1.04rem; max-width: 620px; margin: 0 0 26px; }
+  .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: .92rem; border: 1px solid var(--border); background: var(--card); color: var(--text); box-shadow: var(--shadow); }
+  .btn.primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .btn svg { width: 16px; height: 16px; }
+  .avatar-ring { flex: none; padding: 5px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow: var(--shadow); }
+  .avatar { display: block; width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--bg); }
+  @media (max-width: 760px) { .hero-row { flex-direction: column-reverse; align-items: flex-start; gap: 24px; padding: 56px 0 48px; } .avatar { width: 128px; height: 128px; } }
+
+  .stats { position: relative; margin-top: -36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 18px 16px; box-shadow: var(--shadow); }
+  .stat b { font-variant-numeric: lining-nums; display: block; font-family: "Playfair Display", Georgia, serif; font-size: 2rem; line-height: 1.1; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stat span { color: var(--dim); font-size: .86rem; }
+
+  section { padding: 72px 0 8px; scroll-margin-top: 56px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; }
+  .sec-head .num { font-family: "Playfair Display", Georgia, serif; color: var(--accent); font-size: 1.1rem; }
+  h2 { font-family: "Playfair Display", Georgia, serif; font-size: 1.9rem; margin: 0; letter-spacing: -.01em; }
+  .sec-head p { margin: 0 0 0 auto; color: var(--dim); font-size: .88rem; }
+  @media (max-width: 760px) { .sec-head { flex-wrap: wrap; } .sec-head p { margin: 0; width: 100%; } }
+
+  .grid { display: grid; gap: 16px; }
+  .g2 { grid-template-columns: 1fr 1fr; } .g3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 860px) { .g3 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .g2, .g3 { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: var(--shadow); transition: transform .15s ease, border-color .15s ease; }
+  .card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); }
+  .tag { font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+  .card h3 { margin: 6px 0 8px; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--dim); font-size: .93rem; }
+  .big { font-variant-numeric: lining-nums; font-family: "Playfair Display", Georgia, serif; font-size: 2.1rem; line-height: 1; color: var(--accent); margin: 2px 0 10px; }
+  .big small { font-family: Inter, sans-serif; font-size: .82rem; color: var(--dim); margin-left: 6px; }
+
+  .proj { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+  .proj .thumb { aspect-ratio: 16 / 9; background: var(--bg-alt) center / cover no-repeat; border-bottom: 1px solid var(--border); }
+  .proj .body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .proj .links { margin-top: auto; padding-top: 6px; display: flex; gap: 16px; font-size: .88rem; font-weight: 600; }
+  .proj.text .thumb { display: flex; align-items: center; justify-content: center; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem; color: var(--dim); background: repeating-linear-gradient(135deg, var(--bg-alt) 0 12px, color-mix(in srgb, var(--bg-alt) 70%, var(--border)) 12px 13px); }
+  .pill { display: inline-block; font-size: .72rem; font-weight: 600; color: var(--accent2); background: color-mix(in srgb, var(--accent2) 12%, transparent); border-radius: 100px; padding: 2px 9px; }
+
+  .tl { position: relative; margin: 0; padding: 0 0 0 26px; list-style: none; }
+  .tl::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--accent), var(--accent2)); border-radius: 2px; }
+  .tl li { position: relative; padding: 0 0 26px; }
+  .tl li::before { content: ""; position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
+  .tl .when { font-size: .8rem; font-weight: 600; color: var(--accent); letter-spacing: .04em; }
+  .tl b { display: block; font-size: 1.02rem; margin: 2px 0 2px; }
+  .tl span.d { color: var(--dim); font-size: .93rem; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { border: 1px solid var(--border); background: var(--card); border-radius: 100px; padding: 6px 13px; font-size: .86rem; }
+  .note { color: var(--dim); font-size: .85rem; margin-top: 14px; }
+
+  .cta { margin: 80px 0 0; padding: 40px; border-radius: 18px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .cta h3 { font-family: "Playfair Display", Georgia, serif; font-size: 1.6rem; margin: 0 0 6px; }
+  .cta p { margin: 0; opacity: .9; }
+  .cta .btn { background: #fff; color: #1e293b; border-color: #fff; }
+  footer { color: var(--dim); font-size: .85rem; text-align: center; padding: 36px 0 48px; }
 </style>
 </head>
 <body>
 
-<header class="hero">
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Jeong-Ki Yoo</a>
+    <div class="menu">
+      <a class="opt" href="#results">Results</a>
+      <a class="opt" href="#projects">Projects</a>
+      <a class="opt" href="#experience">Experience</a>
+      <a href="https://github.com/ohora23">GitHub</a>
+      <button id="theme" aria-label="Toggle dark mode" title="Toggle dark mode"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="bg" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="currentColor" stroke-opacity=".07"/></pattern>
+    </defs>
+    <rect width="1200" height="520" fill="url(#grid)" style="color:var(--accent)"/>
+    <g stroke="var(--accent)" stroke-opacity=".28" stroke-width="1.4" fill="none">
+      <path d="M40 470 C 260 420, 420 490, 640 440 S 980 400, 1180 450" stroke-dasharray="6 8"/>
+      <line x1="760" y1="110" x2="880" y2="70"/><line x1="880" y1="70" x2="1000" y2="130"/><line x1="760" y1="110" x2="840" y2="210"/>
+      <line x1="840" y1="210" x2="980" y2="250"/><line x1="1000" y1="130" x2="1110" y2="80"/><line x1="1000" y1="130" x2="980" y2="250"/>
+      <line x1="980" y1="250" x2="1120" y2="300"/><line x1="1110" y1="80" x2="1120" y2="300"/><line x1="840" y1="210" x2="900" y2="340"/>
+      <line x1="900" y1="340" x2="1120" y2="300"/>
+    </g>
+    <g fill="var(--accent)">
+      <circle cx="760" cy="110" r="6" opacity=".7"/><circle cx="880" cy="70" r="5" opacity=".5"/><circle cx="1000" cy="130" r="7" opacity=".8"/>
+      <circle cx="840" cy="210" r="5" opacity=".5"/><circle cx="980" cy="250" r="6" opacity=".7"/><circle cx="1110" cy="80" r="5" opacity=".5"/>
+      <circle cx="1120" cy="300" r="7" opacity=".8"/><circle cx="900" cy="340" r="5" opacity=".5"/>
+    </g>
+  </svg>
   <div class="wrap">
     <div class="hero-row">
-    <div class="txt">
-    <div class="badge">Seoul, Korea</div>
-    <h1>Jeong-Ki Yoo, Ph.D.</h1>
-    <p class="role">Robotics executive and researcher · SLAM · Navigation · Edge AI · Physical AI</p>
-    <p class="subtitle">I lead the engineers who make service and logistics robots see, localize and move reliably,
-    and I stay close enough to the code to validate results on real robots. Director of Robotics Engineering at
-    Bear Robotics since 2024; previously an assistant professor and a Samsung Electronics engineer. KAIST Ph.D.</p>
-    <div class="links">
-      <a href="https://github.com/ohora23">GitHub</a>
-      <a href="https://www.linkedin.com/in/dr-jeongki-yoo-bearrobotics/">LinkedIn</a>
-    </div>
-    </div>
-    <img class="avatar" src="avatar.jpg" alt="Jeong-Ki Yoo">
+      <div class="txt">
+        <div class="eyebrow">Seoul, Korea</div>
+        <h1>Jeong-Ki Yoo, Ph.D.</h1>
+        <p class="role">Robotics executive &amp; researcher · <span>SLAM · Navigation · Edge AI · Physical AI</span></p>
+        <p class="lead">I lead the engineers who make service and logistics robots see, localize and move reliably, and I stay
+        close enough to the code to validate results on real robots. Director of Robotics Engineering at Bear Robotics since
+        2024; previously an assistant professor and a Samsung Electronics engineer. KAIST Ph.D.</p>
+        <div class="btns">
+          <a class="btn primary" href="https://www.linkedin.com/in/dr-jeongki-yoo-bearrobotics/"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+          <a class="btn" href="https://github.com/ohora23"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub</a>
+          <a class="btn" href="#projects">Projects ↓</a>
+        </div>
+      </div>
+      <div class="avatar-ring"><img class="avatar" src="avatar.jpg" alt="Jeong-Ki Yoo"></div>
     </div>
   </div>
 </header>
 
 <main class="wrap">
 
-  <section>
-    <h2><span class="num">01</span>At a glance</h2>
-    <div class="grid g4" style="margin-top:18px">
-      <div class="card"><div class="stat">6,000+</div><p class="dim">robots built under my leadership; 3,500+ in service across the US, Japan, Korea and Europe</p></div>
-      <div class="card"><div class="stat">5</div><p class="dim">robots taken from prototype to mass production or commercial sale</p></div>
-      <div class="card"><div class="stat">0 → 1</div><p class="dim">founded the Korea robotics team in 2021 and grew it into a four-team division</p></div>
-      <div class="card"><div class="stat">6 · 14</div><p class="dim">international journal papers and US/KR patents</p></div>
+  <div class="stats">
+    <div class="stat"><b>6,000+</b><span>robots built under my leadership; 3,500+ in service in the US, Japan, Korea and Europe</span></div>
+    <div class="stat"><b>5</b><span>robots taken from prototype to mass production or commercial sale</span></div>
+    <div class="stat"><b>0 → 1</b><span>founded the Korea robotics team in 2021 and grew it into a four-team division</span></div>
+    <div class="stat"><b>6 · 14</b><span>international journal papers · US/KR patents</span></div>
+  </div>
+
+  <section id="results">
+    <div class="sec-head"><span class="num">01</span><h2>Selected results</h2><p>Company figures are relative or counts only.</p></div>
+    <div class="grid g3">
+      <div class="card"><div class="tag">Localization · 2022–2026</div><div class="big">25×<small>fewer failures</small></div><h3>Visual SLAM as a warehouse product</h3><p>Set the roadmap and the priority on learned features; about 8× fewer failures at a semiconductor-packaging site, 3.5× less CPU.</p></div>
+      <div class="card"><div class="tag">Localization · 2025–2026</div><div class="big">14×<small>lower pose error</small></div><h3>Surviving wheel slip</h3><p>Replaced the legacy localizer (about one-third less CPU) and wrote slip handling myself: 3 of 3 held-and-dragged runs recovered.</p></div>
+      <div class="card"><div class="tag">Partnership · CES 2026</div><div class="big">28<small>live demos, 0 critical failures</small></div><h3>Navigation on LG's CLOiD</h3><p>Ran the five-month program that brought our navigation stack to a partner's home humanoid, from kickoff to show floor.</p></div>
+      <div class="card"><div class="tag">Product · 2025–2026</div><div class="big">3<small>markets: KR · JP · US</small></div><h3>Servi Q to mass production</h3><p>Owned sensing, perception and localization; co-drove navigation with the US team. In production since September 2026.</p></div>
+      <div class="card"><div class="tag">Edge AI · 2025–2026</div><div class="big">5×<small>fewer errors</small></div><h3>Perception on an edge NPU</h3><p>Light-robust tray perception at a third of the CPU, passing the customer's QA cycle with zero tickets.</p></div>
+      <div class="card"><div class="tag">Embedded compute · 2023–2026</div><div class="big">28×<small>smaller logging memory</small></div><h3>Autonomy on a low-cost ARM board</h3><p>Chose the ARM + NPU board and ran per-feature budgets with on-robot A/B tests; scan matching 6× faster.</p></div>
     </div>
   </section>
 
-  <section>
-    <h2><span class="num">02</span>Selected results</h2>
-    <div class="grid g2" style="margin-top:18px">
-      <div class="card"><div class="tag">Localization · 2022–2026</div><h3 style="margin-top:4px">Visual SLAM as a warehouse product</h3><p class="dim">Set the roadmap and the priority on learned features: <b>25×</b> fewer localization failures at a logistics customer, about 8× at a semiconductor-packaging site, 3.5× less CPU.</p></div>
-      <div class="card"><div class="tag">Localization · 2025–2026</div><h3 style="margin-top:4px">Surviving wheel slip</h3><p class="dim">Replaced the legacy localizer (<b>14×</b> lower pose error, about one-third less CPU) and wrote slip handling myself: 3 of 3 held-and-dragged runs recovered.</p></div>
-      <div class="card"><div class="tag">Partnership · CES 2026</div><h3 style="margin-top:4px">Navigation on a partner's home robot</h3><p class="dim">Ran the five-month program to bring our navigation stack to LG's CLOiD humanoid: <b>28</b> live demos at the show, zero critical failures.</p></div>
-      <div class="card"><div class="tag">Product · 2025–2026</div><h3 style="margin-top:4px">Servi Q to mass production</h3><p class="dim">Owned sensing, perception and localization; co-drove navigation with the US team. In production since September 2026, selling in Korea, Japan and the US.</p></div>
-      <div class="card"><div class="tag">Edge AI · 2025–2026</div><h3 style="margin-top:4px">Perception on an edge NPU</h3><p class="dim">Light-robust tray perception: <b>5×</b> fewer classification errors at a third of the CPU, passing customer QA with zero tickets.</p></div>
-      <div class="card"><div class="tag">Embedded compute · 2023–2026</div><h3 style="margin-top:4px">Autonomy on a low-cost ARM board</h3><p class="dim">Chose the ARM + NPU board and ran per-feature budgets with on-robot A/B tests: logging memory <b>28×</b> smaller, scan matching 6× faster.</p></div>
+  <section id="projects">
+    <div class="sec-head"><span class="num">02</span><h2>Open-source &amp; personal projects</h2><p>Built and benchmarked on my own workstation.</p></div>
+    <div class="grid g3">
+      <div class="card proj"><div class="thumb" style="background-image:url(assets/axon.jpg)"></div><div class="body"><div class="tag">C++ · Apache-2.0</div><h3>axon</h3><p>Zero-copy data transport for Physical AI along the sensor → accelerator → real-time control path; 7–19× lower cross-process GPU latency than ROS 2.</p><div class="links"><a href="https://ohora23.github.io/Axon_SDK_for_PhysicalAI/">Project page</a><a href="https://github.com/ohora23/Axon_SDK_for_PhysicalAI">Code</a></div></div></div>
+      <div class="card proj"><div class="thumb" style="background-image:url(assets/edge-pointdit.jpg)"></div><div class="body"><div class="tag">Python · Apache-2.0</div><h3>Edge-PointDiT</h3><p>Transparent-object depth on a 2-TOPS RK3588 NPU: a PointDiT reproduction retargeted from diffusion to regression, fp16 bit-exact with PyTorch.</p><div class="links"><a href="https://ohora23.github.io/edge-pointdit-regression-distillation/">Project page</a><a href="https://github.com/ohora23/edge-pointdit-regression-distillation">Code</a></div></div></div>
+      <div class="card proj"><div class="thumb" style="background-image:url(assets/memgarden.jpg)"></div><div class="body"><div class="tag">Rust · MIT</div><h3>MemGarden</h3><p>Long-term memory for AI coding agents: local-LLM fact extraction and hybrid recall in one binary on one SQLite file; 7.1 ms p50 recall.</p><div class="links"><a href="https://ohora23.github.io/memgarden/">Project page</a><a href="https://github.com/ohora23/memgarden">Code</a></div></div></div>
+      <div class="card proj"><div class="thumb" style="background-image:url(assets/leap.jpg)"></div><div class="body"><div class="tag">Shell · Python · MIT</div><h3>Leap Motion Linux Revival Kit</h3><p>The original Leap Motion Controller back on modern Linux after Ultraleap shut down: archived packages, a udev fix and a live visualizer.</p><div class="links"><a href="https://ohora23.github.io/leap-motion-linux-revival/">Project page</a><a href="https://github.com/ohora23/leap-motion-linux-revival">Code</a></div></div></div>
+      <div class="card proj text"><div class="thumb">$ llm up gpu &amp;&amp; llm bench</div><div class="body"><div class="tag">Shell · Rust · MIT</div><h3>Local LLM Toolkit</h3><p>One CLI and a native GUI for running several local LLMs on a single 16 GB GPU, with serving profiles, benchmarks and coding-eval harnesses.</p><div class="links"><a href="https://ohora23.github.io/local-llm-toolkit/">Project page</a><a href="https://github.com/ohora23/local-llm-toolkit">Code</a></div></div></div>
+      <div class="card proj text"><div class="thumb">sim frame → real camera</div><div class="body"><div class="tag">Python · Apache-2.0</div><h3>PhysicalAI Sim2Real Camera</h3><p>Makes MuJoCo and Genesis cameras behave like the real one: distortion, noise, motion blur, rolling shutter, depth artefacts, latency and drops.</p><div class="links"><span class="pill">Private · available on request</span></div></div></div>
     </div>
-    <p class="dim" style="margin-top:14px">Company figures are relative or counts only. A technical deck covering the system design behind each result is available on request.</p>
+    <p class="note">Academic work from my lab, including the HRVL-GBot open humanoid platform, is on <a href="https://github.com/ohora23">GitHub</a>.</p>
   </section>
 
-  <section>
-    <h2><span class="num">03</span>Open-source and personal projects</h2>
-    <div class="grid g2" style="margin-top:18px"><div class="card"><div class="tag">C++ · Apache-2.0</div><h3 style="margin-top:4px">axon</h3><p class="dim">Zero-copy data transport for Physical AI: payloads stay in shared dma-buf or GPU memory along the sensor → accelerator → RT-control path. 7–19× lower cross-process GPU latency than ROS 2.</p><p><a class="more" href="https://github.com/ohora23/Axon_SDK_for_PhysicalAI">Code</a><a class="more" href="https://ohora23.github.io/Axon_SDK_for_PhysicalAI/">Project page</a></p></div><div class="card"><div class="tag">Python · Apache-2.0</div><h3 style="margin-top:4px">Edge-PointDiT</h3><p class="dim">Transparent-object depth on a 2-TOPS RK3588 NPU: an unofficial PointDiT reproduction retargeted from diffusion to regression, fp16 bit-exact with PyTorch.</p><p><a class="more" href="https://github.com/ohora23/edge-pointdit-regression-distillation">Code</a><a class="more" href="https://ohora23.github.io/edge-pointdit-regression-distillation/">Project page</a></p></div><div class="card"><div class="tag">Python · Apache-2.0</div><h3 style="margin-top:4px">PhysicalAI Sim2Real Camera</h3><p class="dim">Makes MuJoCo and Genesis cameras behave like the real one: distortion, noise, motion blur, rolling shutter, depth artefacts, latency and drops, fitted from real captures.</p><p><span class="dim" style="font-size:.85rem">Private · available on request</span></p></div><div class="card"><div class="tag">Rust · MIT</div><h3 style="margin-top:4px">MemGarden</h3><p class="dim">Long-term memory for AI coding agents: local-LLM fact extraction and hybrid recall in one binary on one SQLite file; 7.1 ms p50 recall.</p><p><a class="more" href="https://github.com/ohora23/memgarden">Code</a><a class="more" href="https://ohora23.github.io/memgarden/">Project page</a></p></div><div class="card"><div class="tag">Shell · Rust · MIT</div><h3 style="margin-top:4px">Local LLM Toolkit</h3><p class="dim">One CLI and a native GUI for running several local LLMs on a single 16 GB GPU, with serving profiles, benchmarks and coding-eval harnesses.</p><p><a class="more" href="https://github.com/ohora23/local-llm-toolkit">Code</a><a class="more" href="https://ohora23.github.io/local-llm-toolkit/">Project page</a></p></div><div class="card"><div class="tag">Shell · Python · MIT</div><h3 style="margin-top:4px">Leap Motion Linux Revival Kit</h3><p class="dim">Brings the original Leap Motion Controller back to modern Linux after Ultraleap shut down: archived packages, a udev fix and a live visualizer.</p><p><a class="more" href="https://github.com/ohora23/leap-motion-linux-revival">Code</a><a class="more" href="https://ohora23.github.io/leap-motion-linux-revival/">Project page</a></p></div></div>
-    <p class="dim" style="margin-top:14px">Academic work from my lab, including the HRVL-GBot open humanoid platform, is on <a href="https://github.com/ohora23">GitHub</a>.</p>
+  <section id="experience">
+    <div class="sec-head"><span class="num">03</span><h2>Experience</h2></div>
+    <div class="grid g2" style="align-items:start">
+      <ul class="tl">
+        <li><div class="when">2024 – PRESENT</div><b>Director of Robotics Engineering (Executive), Bear Robotics</b><span class="d">Cross-border US/KR robotics organization: mobility, sensory intelligence, new product, simulation &amp; test.</span></li>
+        <li><div class="when">2021 – 2024</div><b>Manager, KR Robotics Team, Bear Robotics</b><span class="d">Founded the Korea team; launched Servi Plus and Servi Air; replaced the mapping engine across every product.</span></li>
+        <li><div class="when">2014 – 2021</div><b>Assistant Professor, Daejeon University</b><span class="d">Head of department (2021); founded the HRVL lab; NRF principal investigator.</span></li>
+        <li><div class="when">2012 – 2014</div><b>Senior Engineer, Samsung Electronics</b><span class="d">Ceiling-vision SLAM and navigation for robot vacuums (POWERbot VR9000).</span></li>
+        <li style="padding-bottom:0"><div class="when">2004 – 2012</div><b>M.S. and Ph.D., Electrical Engineering, KAIST</b><span class="d">Gaze-control navigation for humanoid robots; FIRA HuroCup RoboMarathon 1st place (2007).</span></li>
+      </ul>
+      <div class="grid">
+        <div class="card"><div class="tag">Focus</div>
+          <div class="chips" style="margin-top:10px">
+            <span class="chip">SLAM &amp; localization</span><span class="chip">Navigation</span><span class="chip">Sensor fusion &amp; calibration</span>
+            <span class="chip">Edge AI on ARM + NPU</span><span class="chip">Sim-to-real</span><span class="chip">AI-assisted engineering</span>
+          </div>
+        </div>
+        <div class="card"><div class="tag">Stack</div>
+          <div class="chips" style="margin-top:10px">
+            <span class="chip">C++</span><span class="chip">Python</span><span class="chip">Rust</span><span class="chip">ROS 1/2</span>
+            <span class="chip">PyTorch</span><span class="chip">CUDA</span><span class="chip">RKNN</span><span class="chip">PREEMPT_RT</span><span class="chip">MuJoCo</span>
+          </div>
+        </div>
+        <div class="card"><div class="tag">Portfolio decks</div><p style="margin-top:8px">A 15-slide overview and a 27-slide technical deck go deeper than this page. Both include field recordings and are shared on request.</p></div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2><span class="num">04</span>Experience</h2>
-    <ul class="tl">
-      <li><span class="when">2024 – present</span><span><b>Director of Robotics Engineering (Executive), Bear Robotics</b><span class="dim">Cross-border US/KR robotics organization: mobility, sensory intelligence, new product, simulation &amp; test.</span></span></li>
-      <li><span class="when">2021 – 2024</span><span><b>Manager, KR Robotics Team, Bear Robotics</b><span class="dim">Founded the Korea team; launched Servi Plus and Servi Air; replaced the mapping engine across every product.</span></span></li>
-      <li><span class="when">2014 – 2021</span><span><b>Assistant Professor, Daejeon University</b><span class="dim">Head of department (2021); founded the HRVL lab; NRF principal investigator.</span></span></li>
-      <li><span class="when">2012 – 2014</span><span><b>Senior Engineer, Samsung Electronics</b><span class="dim">Ceiling-vision SLAM and navigation for robot vacuums (POWERbot VR9000).</span></span></li>
-      <li><span class="when">2004 – 2012</span><span><b>M.S. and Ph.D., Electrical Engineering, KAIST</b><span class="dim">Gaze-control navigation for humanoid robots; FIRA HuroCup RoboMarathon 1st place (2007).</span></span></li>
-    </ul>
-  </section>
-
-  <section>
-    <h2><span class="num">05</span>Portfolio decks</h2>
-    <p class="dim">Two slide decks go deeper than this page: a 15-slide overview of the leadership arc and products, and a
-    27-slide technical deck on the sensing stack, visual localization, wheel slip, edge AI, mapping and compute budgets.
-    Both include field recordings and are shared on request through <a href="https://www.linkedin.com/in/dr-jeongki-yoo-bearrobotics/">LinkedIn</a>.</p>
-  </section>
+  <div class="cta">
+    <div><h3>Let's talk robots.</h3><p>The fastest way to reach me is LinkedIn.</p></div>
+    <a class="btn" href="https://www.linkedin.com/in/dr-jeongki-yoo-bearrobotics/">Message on LinkedIn →</a>
+  </div>
 
 </main>
 
-<footer>
-  Jeong-Ki Yoo · <a href="https://github.com/ohora23">GitHub</a> · <a href="https://www.linkedin.com/in/dr-jeongki-yoo-bearrobotics/">LinkedIn</a>
-</footer>
+<footer>© 2026 Jeong-Ki Yoo · <a href="https://github.com/ohora23">GitHub</a> · <a href="https://www.linkedin.com/in/dr-jeongki-yoo-bearrobotics/">LinkedIn</a></footer>
 
+<script>
+  (function () {
+    var root = document.documentElement, key = 'theme';
+    try { var t = localStorage.getItem(key); if (t) root.setAttribute('data-theme', t); } catch (e) {}
+    document.getElementById('theme').addEventListener('click', function () {
+      var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme') === 'dark'
+               : matchMedia('(prefers-color-scheme: dark)').matches;
+      var next = dark ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem(key, next); } catch (e) {}
+    });
+  })();
+</script>
 </body>
 </html>
